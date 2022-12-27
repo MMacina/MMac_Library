@@ -9,5 +9,4 @@ public class MMacLibraryApplication {
     public static void main(String[] args) {
         SpringApplication.run(MMacLibraryApplication.class, args);
     }
-
 }
