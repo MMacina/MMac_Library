@@ -1,6 +1,6 @@
 package com.crud.mmac_library.mapper;
-import com.crud.mmac_library.domain.user.User;
-import com.crud.mmac_library.domain.user.UserDto;
+import com.crud.mmac_library.domainAndDto.user.User;
+import com.crud.mmac_library.domainAndDto.user.UserDto;
 
 public class UserMapper {
 

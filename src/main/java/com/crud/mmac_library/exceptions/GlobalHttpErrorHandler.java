@@ -1,5 +1,6 @@
-package com.crud.mmac_library.controller;
+package com.crud.mmac_library.exceptions;
 
+import com.crud.mmac_library.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

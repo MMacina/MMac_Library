@@ -1,6 +1,6 @@
-package com.crud.mmac_library.domain.user;
+package com.crud.mmac_library.domainAndDto.user;
 
-import com.crud.mmac_library.domain.borrowing.Borrowing;
+import com.crud.mmac_library.domainAndDto.borrowing.Borrowing;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import java.util.Date;

@@ -1,7 +1,7 @@
 package com.crud.mmac_library.mapper;
 
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.copy.CopyDto;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
+import com.crud.mmac_library.domainAndDto.copy.CopyDto;
 
 public class CopyMapper {
 

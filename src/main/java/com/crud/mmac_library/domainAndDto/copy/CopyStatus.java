@@ -1,4 +1,4 @@
-package com.crud.mmac_library.domain.copy;
+package com.crud.mmac_library.domainAndDto.copy;
 
 public enum CopyStatus {
     RENTED,

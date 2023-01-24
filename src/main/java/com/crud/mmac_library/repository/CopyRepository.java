@@ -1,8 +1,6 @@
 package com.crud.mmac_library.repository;
 
-import com.crud.mmac_library.domain.book.Book;
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.copy.CopyStatus;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

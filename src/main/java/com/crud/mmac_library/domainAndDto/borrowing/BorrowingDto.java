@@ -1,7 +1,7 @@
-package com.crud.mmac_library.domain.borrowing;
+package com.crud.mmac_library.domainAndDto.borrowing;
 
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.user.User;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
+import com.crud.mmac_library.domainAndDto.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

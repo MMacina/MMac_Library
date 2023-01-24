@@ -1,7 +1,7 @@
 package com.crud.mmac_library.mapper;
 
-import com.crud.mmac_library.domain.borrowing.Borrowing;
-import com.crud.mmac_library.domain.borrowing.BorrowingDto;
+import com.crud.mmac_library.domainAndDto.borrowing.Borrowing;
+import com.crud.mmac_library.domainAndDto.borrowing.BorrowingDto;
 
 public class BorrowingMapper {
     public Borrowing mapToBorrowing(BorrowingDto borrowingDto) {

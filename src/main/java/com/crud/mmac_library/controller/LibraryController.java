@@ -1,12 +1,11 @@
 package com.crud.mmac_library.controller;
 
-import com.crud.mmac_library.domain.book.BookDto;
-import com.crud.mmac_library.domain.book.Book;
-import com.crud.mmac_library.domain.borrowing.Borrowing;
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.copy.CopyDto;
-import com.crud.mmac_library.domain.user.User;
-import com.crud.mmac_library.domain.user.UserDto;
+import com.crud.mmac_library.domainAndDto.book.BookDto;
+import com.crud.mmac_library.domainAndDto.book.Book;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
+import com.crud.mmac_library.domainAndDto.copy.CopyDto;
+import com.crud.mmac_library.domainAndDto.user.User;
+import com.crud.mmac_library.domainAndDto.user.UserDto;
 
 import com.crud.mmac_library.mapper.BookMapper;
 import com.crud.mmac_library.mapper.BorrowingMapper;
@@ -17,7 +16,6 @@ import com.crud.mmac_library.service.BorrowingDbService;
 import com.crud.mmac_library.service.CopyDbService;
 import com.crud.mmac_library.service.UserDbService;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.mapper.Mapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,14 +52,14 @@ public class LibraryController {
     @PostMapping(value = "/copy")
     public ResponseEntity<Void> addCopy (@RequestBody CopyDto copyDto){
         Copy copy = copyMapper.mapToCopy(copyDto);
-        copyDbService.saveCopy(copy);
+        copyDbService.addCopy(copy);
         return ResponseEntity.ok().build();
     }
     @PutMapping(value = "/copy")
     public ResponseEntity<CopyDto> updateCopyStatus(@RequestBody CopyDto copyDto) {
         Copy copy = copyMapper.mapToCopy(copyDto);
-        Copy updatedCopy = copyDbService.saveCopy(copy);
-        return ResponseEntity.ok(copyMapper.mapToCopyDto(updatedCopy));
+        copyDbService.addCopy(copy);
+        return ResponseEntity.ok(copyMapper.mapToCopyDto(copy));
     }
 
     @GetMapping(value = "{title}")

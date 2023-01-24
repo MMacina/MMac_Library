@@ -1,8 +1,8 @@
 package com.crud.mmac_library.service;
 
-import com.crud.mmac_library.domain.book.Book;
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.copy.CopyStatus;
+import com.crud.mmac_library.domainAndDto.book.Book;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
+import com.crud.mmac_library.domainAndDto.copy.CopyStatus;
 import com.crud.mmac_library.repository.CopyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,8 +16,12 @@ public class CopyDbService {
     private final CopyRepository copyRepository;
     private final BookDbService bookDbService;
 
-    public Copy saveCopy(final Copy copy) {
-        return copyRepository.save(copy);
+    public void addCopy(final Copy copy) {
+        copyRepository.saveCopy(copy);
+    }
+
+    public Copy updateCopy(final Copy copy) {
+        return copyRepository.saveCopy(copy);
     }
 
     public Long howManyBooks(String title) {

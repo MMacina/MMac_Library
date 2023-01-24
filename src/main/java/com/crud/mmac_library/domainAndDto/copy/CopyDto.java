@@ -1,6 +1,6 @@
-package com.crud.mmac_library.domain.copy;
+package com.crud.mmac_library.domainAndDto.copy;
 
-import com.crud.mmac_library.domain.book.Book;
+import com.crud.mmac_library.domainAndDto.book.Book;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

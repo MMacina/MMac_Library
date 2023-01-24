@@ -1,6 +1,6 @@
-package com.crud.mmac_library.domain.book;
+package com.crud.mmac_library.domainAndDto.book;
 
-import com.crud.mmac_library.domain.copy.Copy;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
 import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,31 +11,38 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "Books")
+@Entity
+@Table(name = "BOOKS")
 public class Book {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
+    @Column(name = "ID")
     private Long Id;
 
-    @Column(name = "Title")
+    @Column(name = "TITLE")
     private String bookTitle;
 
-    @Column(name = "Authors Name")
+    @Column(name = "AUTHORS_NAME")
     private String authorsName;
 
-    @Column(name = "Authors Surname")
+    @Column(name = "AUTHORS_SURNAME")
     private String authorsSurname;
 
-    @Column(name = "Publicised")
+    @Column(name = "PUBLICISED")
     private LocalDate publicised;
 
     @OneToMany(
             targetEntity = Copy.class,
             mappedBy = "book",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<Copy> copies = new ArrayList<>();
+
+    public Book(String bookTitle, String authorsName, String authorsSurname) {
+        this.bookTitle = bookTitle;
+        this.authorsName = authorsName;
+        this.authorsSurname = authorsSurname;
+    }
 }

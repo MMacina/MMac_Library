@@ -1,7 +1,7 @@
 package com.crud.mmac_library.mapper;
 
-import com.crud.mmac_library.domain.book.Book;
-import com.crud.mmac_library.domain.book.BookDto;
+import com.crud.mmac_library.domainAndDto.book.Book;
+import com.crud.mmac_library.domainAndDto.book.BookDto;
 
 public class BookMapper {
 

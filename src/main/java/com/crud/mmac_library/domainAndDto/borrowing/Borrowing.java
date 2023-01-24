@@ -1,7 +1,7 @@
-package com.crud.mmac_library.domain.borrowing;
+package com.crud.mmac_library.domainAndDto.borrowing;
 
-import com.crud.mmac_library.domain.copy.Copy;
-import com.crud.mmac_library.domain.user.User;
+import com.crud.mmac_library.domainAndDto.copy.Copy;
+import com.crud.mmac_library.domainAndDto.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,25 +14,26 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "Borrowings")
+@Entity
+@Table(name = "BORROWINGS")
 public class Borrowing {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
+    @Column(name = "ID")
     private Long Id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Copy_Id")
+    @JoinColumn(name = "COPY_ID")
     private Copy copy;
 
     @ManyToOne
-    @JoinColumn(name = "Users_Id")
+    @JoinColumn(name = "USER_ID")
     private User user;
 
-    @Column(name = "Date_of_Borrow")
+    @Column(name = "DATE_OF_BORROW")
     private LocalDate dateOfBorrow;
 
-    @Column(name = "Date of return")
+    @Column(name = "DATE_OF_RETURN")
     private LocalDate dateOfReturn;
 }
