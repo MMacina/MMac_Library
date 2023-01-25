@@ -13,8 +13,8 @@ public enum DbManager {
 
     DbManager() {
         Properties connectionProps = new Properties();
-        connectionProps.put("user", "root");
-        connectionProps.put("password", "Cinek1979!");
+        connectionProps.put("user", "kodilla_user");
+        connectionProps.put("password", "kodilla_password");
         try {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/mmac_library_db?serverTimezone=Europe/Warsaw&useSLL=False",

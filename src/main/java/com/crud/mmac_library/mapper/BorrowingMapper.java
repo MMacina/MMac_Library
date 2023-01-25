@@ -2,7 +2,9 @@ package com.crud.mmac_library.mapper;
 
 import com.crud.mmac_library.domainAndDto.borrowing.Borrowing;
 import com.crud.mmac_library.domainAndDto.borrowing.BorrowingDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BorrowingMapper {
     public Borrowing mapToBorrowing(BorrowingDto borrowingDto) {
         return new Borrowing(

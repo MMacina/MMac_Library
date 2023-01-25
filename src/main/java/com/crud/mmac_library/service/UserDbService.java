@@ -1,6 +1,7 @@
 package com.crud.mmac_library.service;
 
 import com.crud.mmac_library.domainAndDto.user.User;
+import com.crud.mmac_library.exceptions.UserNotFoundException;
 import com.crud.mmac_library.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,4 +16,8 @@ public class UserDbService {
         userRepository.save(user);
     }
 
+    public User findUser(final Long userId) throws UserNotFoundException{
+        User user = userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
+        return user;
+    }
 }

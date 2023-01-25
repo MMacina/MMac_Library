@@ -35,8 +35,6 @@ class MMacLibraryApplicationTests {
 
         //Then
         assertEquals(1, bookRepository.count());
-
-
     }
 }
 

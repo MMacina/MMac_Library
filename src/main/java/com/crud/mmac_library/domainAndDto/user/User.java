@@ -38,7 +38,6 @@ public class User {
             targetEntity = Borrowing.class,
             mappedBy = "user",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
+            fetch = FetchType.EAGER)
     private List<Borrowing> borrowings = new ArrayList<>();
 }

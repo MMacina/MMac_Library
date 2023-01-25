@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -36,4 +35,9 @@ public class Borrowing {
 
     @Column(name = "DATE_OF_RETURN")
     private LocalDate dateOfReturn;
+
+    public Borrowing(Copy copy, User user) {
+        this.copy = copy;
+        this.user = user;
+    }
 }

@@ -15,4 +15,9 @@ public class UserDto {
     private String userSurname;
     private Date joined;
     private List<Borrowing> borrowings;
+
+    public UserDto(String userName, String userSurname) {
+        this.userName = userName;
+        this.userSurname = userSurname;
+    }
 }

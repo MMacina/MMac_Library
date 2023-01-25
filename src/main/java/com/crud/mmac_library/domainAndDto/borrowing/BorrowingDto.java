@@ -4,7 +4,6 @@ import com.crud.mmac_library.domainAndDto.copy.Copy;
 import com.crud.mmac_library.domainAndDto.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -16,5 +15,4 @@ public class BorrowingDto {
     private User user;
     private LocalDate DateOfBorrow;
     private LocalDate DateOfReturn;
-
 }

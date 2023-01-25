@@ -1,12 +1,11 @@
 package com.crud.mmac_library.service;
 
-import com.crud.mmac_library.domainAndDto.book.Book;
 import com.crud.mmac_library.domainAndDto.copy.Copy;
 import com.crud.mmac_library.domainAndDto.copy.CopyStatus;
+import com.crud.mmac_library.exceptions.CopyNotFoundException;
 import com.crud.mmac_library.repository.CopyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -17,17 +16,12 @@ public class CopyDbService {
     private final BookDbService bookDbService;
 
     public void addCopy(final Copy copy) {
-        copyRepository.saveCopy(copy);
+        copyRepository.save(copy);
     }
 
-    public Copy updateCopy(final Copy copy) {
-        return copyRepository.saveCopy(copy);
-    }
-
-    public Long howManyBooks(String title) {
-        Book requestedBook = bookDbService.findBookByTitle(title);
-        Long requestedBookId = requestedBook.getId();
-        List<Copy> requestedCopies = copyRepository.findAllById(requestedBookId);
+    public Long howManyCopies(String title) throws CopyNotFoundException{
+        Long requestedBookId = bookDbService.findBookByTitle(title).getId();
+        List<Copy> requestedCopies = (List<Copy>)copyRepository.findById(requestedBookId).orElseThrow(CopyNotFoundException::new);
         Long requestedNumberOfCopies = requestedCopies.stream()
                 .filter(c -> c.getCopyStatus().equals(CopyStatus.AVAILABLE))
                 .count();

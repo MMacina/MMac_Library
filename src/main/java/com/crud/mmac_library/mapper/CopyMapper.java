@@ -2,7 +2,9 @@ package com.crud.mmac_library.mapper;
 
 import com.crud.mmac_library.domainAndDto.copy.Copy;
 import com.crud.mmac_library.domainAndDto.copy.CopyDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CopyMapper {
 
     public Copy mapToCopy(CopyDto copyDto) {
