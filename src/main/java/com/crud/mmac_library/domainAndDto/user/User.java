@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -40,4 +40,9 @@ public class User {
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)
     private List<Borrowing> borrowings = new ArrayList<>();
+
+    public User(String userName, String userSurname) {
+        this.userName = userName;
+        this.userSurname = userSurname;
+    }
 }

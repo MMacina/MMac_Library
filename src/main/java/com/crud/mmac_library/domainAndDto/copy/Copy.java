@@ -23,7 +23,7 @@ public class Copy {
     @Column(name = "COPY_STATUS")
     private CopyStatus copyStatus;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Book_Id")
     private Book book;
 
